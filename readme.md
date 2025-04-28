@@ -14,12 +14,12 @@ Bach-to-the-future is a lightweight tool for generating, viewing, and editing mu
 ⸻
 🚀 Getting Started
 
-Installation
+Installation </br>
 `git clone https://github.com/kkazensk/bach-to-the-future.git`
 </br>
 `cd bach-to-the-future`
 
-Run the Program
+Run the Program </br>
 `./run.sh`
 
 
