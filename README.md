@@ -1,8 +1,11 @@
-1. Set up venv: python3 -m venv bachvenv (Done once, do not repeat)
+1. Set up venv: `python3 -m venv bachvenv` (Done once, do not repeat)
 
-2. activate: source bachvenv/bin/activate
+2. activate: `source bachvenv/bin/activate`
 
-3. requirements.txt for dependencies... to install all: python3 -m pip install -r requirements.txt
+3. requirements.txt for dependencies... to install all: `python3 -m pip install -r requirements.txt`
+
+This process is being desinged to be done with `library_check.sh`
+
 
 
 The training files save training to .keras so that you can run the generate file multiple times without needing to retrain
