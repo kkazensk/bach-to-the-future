@@ -14,10 +14,10 @@ Similar to VERSION 1, but was the first iteration with less training influence.
 VERSION 1:
 Generates a melody part with backing chords
 
-    python3 train_chords.py
+    python3 train_1.py
         - Will prompt for training directory of musicxml files (e.g. ./music_xml_dataset)
         - When testing, we copied 10 training files into a new directory called ./small_music_dataset  to make training times quicker for iterative design
-    python3 generate_chords.py
+    python3 generate_1.py
         - Will prompt for key to generate music (e.g. C major)
 
 
@@ -36,4 +36,3 @@ Tune Training Tuning:
 
 downloadScores.py creates the musicxml_dataset for training from music21 library
 
-createmap.py creates a mapping for the musicxml files to relate to the training code for beat, duration, and code
