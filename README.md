@@ -12,7 +12,7 @@ The training files save training to .keras so that you can run the generate file
 
 
 BEFORE GENERATING, you need to create a .pkl file for note mappings by running:
-    python3 createmap.py
+    `python3 createmap.py`
 which creates note_mappings_with_beats.pkl
 
 
@@ -42,6 +42,6 @@ Tune Training Tuning:
     - You can also change the LSTM. For our purposes we used 128. You can also try 256, but my laptop heated up too much while training, hence the bump down. If you wanted to lower this more to 64, you could try that as well.
 
 
-downloadScores.py creates the musicxml_dataset for training from music21 library
+`downloadScores.py` creates the musicxml_dataset for training from music21 library
 
-createmap.py creates a mapping for the musicxml files to relate to the training code for beat, duration, and code
+`createmap.py` creates a mapping for the musicxml files to relate to the training code for beat, duration, and code
