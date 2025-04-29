@@ -1,50 +1,47 @@
-🎼 Bach-to-the-future
+1. Set up venv: `python3 -m venv bachvenv` (Done once, do not repeat)
 
-Bach-to-the-future is a lightweight tool for generating, viewing, and editing music scores. Create new compositions instantly, tweak key details, and export your final work in multiple formats.
+2. activate: `source bachvenv/bin/activate`
 
-⸻
+3. requirements.txt for dependencies... to install all: `python3 -m pip install -r requirements.txt`
 
-✨ Features
-	•	Generate original music scores automatically
-	•	Edit key signature, tempo, time signature, clef, and more
-	•	Visualize and modify individual notes and measures
-	•	Export to MusicXML, MIDI, or PDF formats
-	•	Save and reload editing sessions
-
-⸻
-🚀 Getting Started
-
-Installation </br>
-`git clone https://github.com/kkazensk/bach-to-the-future.git`
-</br>
-`cd bach-to-the-future`
-
-Run the Program </br>
-`./run.sh`
+This process is being desinged to be done with `library_check.sh`
 
 
-⸻
 
-📦 Dependencies
-	•	Python 3.8+
-	•	music21
-	•	(Optional) MuseScore or LilyPond for enhanced rendering
+The training files save training to .keras so that you can run the generate file multiple times without needing to retrain
 
-⸻
 
-🛠️ Future Plans
-	•	Polyphonic support
-	•	Style-based generation (e.g., Jazz, Classical)
-	•	Online collaboration tools
+BEFORE GENERATING, you need to create a .pkl file for note mappings by running:
+    `python3 createmap.py`
+which creates note_mappings_with_beats.pkl
 
-⸻
 
-🧑‍💻 Contributing
+VERSION 0:
+Similar to VERSION 1, but was the first iteration with less training influence. It uses note_mappings.pkl, and I accidentally deleted the original python file that created this .pkl
 
-Contributions are welcome! Please submit a pull request or open an issue to get started.
+VERSION 1:
+Generates a melody part with backing chords
 
-⸻
+    python3 train_chords.py
+        - Will prompt for training directory of musicxml files (e.g. ./music_xml_dataset)
+        - When testing, we copied 10 training files into a new directory called ./small_music_dataset  to make training times quicker for iterative design
+    python3 generate_chords.py
+        - Will prompt for key to generate music (e.g. C major)
 
-🛡️ License
 
-Released under the MIT License.
+VERSION 2:
+Generates a 4-part score, but needs more improvement in inter-part relatability and note durations.
+
+
+
+
+
+Tune Training Tuning:
+    - You can change the number of epochs. For quicker training but less iterations, use 1 to 5. For mid-range pcik from 5-10. For better, pick 15 or higher.
+    - You can change the sequence_length. This affects training time by dictating how many notes in one sequence should influence the generation of one note. For quicker training, pick 10 to 25. For better training, consider 30 to 40.
+    - You can also change the LSTM. For our purposes we used 128. You can also try 256, but my laptop heated up too much while training, hence the bump down. If you wanted to lower this more to 64, you could try that as well.
+
+
+`downloadScores.py` creates the musicxml_dataset for training from music21 library
+
+`createmap.py` creates a mapping for the musicxml files to relate to the training code for beat, duration, and code
