@@ -1,23 +1,15 @@
-1. Set up venv: `python3 -m venv bachvenv` (Done once, do not repeat)
+1. Set up venv: python3 -m venv bachvenv (Done once, do not repeat)
 
-2. activate: `source bachvenv/bin/activate`
+2. activate: source bachvenv/bin/activate
 
-3. requirements.txt for dependencies... to install all: `python3 -m pip install -r requirements.txt`
-
-This process is being desinged to be done with `library_check.sh`
-
+3. requirements.txt for dependencies... to install all: python3 -m pip install -r requirements.txt
 
 
 The training files save training to .keras so that you can run the generate file multiple times without needing to retrain
 
 
-BEFORE GENERATING, you need to create a .pkl file for note mappings by running:
-    `python3 createmap.py`
-which creates note_mappings_with_beats.pkl
-
-
 VERSION 0:
-Similar to VERSION 1, but was the first iteration with less training influence. It uses note_mappings.pkl, and I accidentally deleted the original python file that created this .pkl
+Similar to VERSION 1, but was the first iteration with less training influence.
 
 VERSION 1:
 Generates a melody part with backing chords
@@ -42,6 +34,6 @@ Tune Training Tuning:
     - You can also change the LSTM. For our purposes we used 128. You can also try 256, but my laptop heated up too much while training, hence the bump down. If you wanted to lower this more to 64, you could try that as well.
 
 
-`downloadScores.py` creates the musicxml_dataset for training from music21 library
+downloadScores.py creates the musicxml_dataset for training from music21 library
 
-`createmap.py` creates a mapping for the musicxml files to relate to the training code for beat, duration, and code
+createmap.py creates a mapping for the musicxml files to relate to the training code for beat, duration, and code
