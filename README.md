@@ -24,7 +24,11 @@ Generates a melody part with backing chords
 VERSION 2:
 Generates a 4-part score, but needs more improvement in inter-part relatability and note durations.
 
-
+    python3 train_1.py
+        - Same training as VERSION 1, so you do not need to retrain if already
+           trained.
+    python3 generate_2.py
+        - Will prompt for key to generate music (e.g. C major)
 
 
 
