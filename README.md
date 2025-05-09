@@ -42,4 +42,4 @@ downloadScores.py creates the musicxml_dataset for training from music21 library
 
 To run with GUI 
 
-python GUI.py
+`python GUI.py`
