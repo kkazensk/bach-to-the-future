@@ -5,6 +5,7 @@ import numpy as np
 import random
 import pickle
 from tensorflow.keras.models import load_model
+from file_converter import convert_musicxml_to_pdf
 
 # --- Duration Helper ---
 # This function ensures that the note durations are mapped to a valid value
@@ -168,6 +169,7 @@ for n, d in generated_sequence:
 print("Saving output...")
 # Generate the final MusicXML with chords
 final_score = generate_musicxml_with_chords(transposed_sequence, user_key_obj)
-output_path = "new_music.xml"  # Set output path
-final_score.write('musicxml', fp=output_path)  # Save the generated music to MusicXML file
+output_path = "new_music"  # Set output path
+final_score.write('musicxml', fp=output_path+'.xml')  # Save the generated music to MusicXML file
+convert_musicxml_to_pdf(output_path+'.xml', output_path, 'generated'+output_path)
 print(f"Saved: {output_path}")  # Print confirmation message
